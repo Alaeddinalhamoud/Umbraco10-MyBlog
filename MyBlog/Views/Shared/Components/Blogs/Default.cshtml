@@ -1,0 +1,20 @@
+﻿@using MyBlog.Models.ViewComponentModels
+@model IEnumerable<BlogsView>
+
+@foreach (var item in Model ?? new List<BlogsView>())
+{
+    <!-- Post preview-->
+    <div class="post-preview">
+        <a href="@item?.BlogUrl">
+            <h2 class="post-title">@item?.Title</h2>
+            <h3 class="post-subtitle">@item?.SubTitle</h3>
+        </a>
+        <p class="post-meta">
+            Posted by
+            <a href="#!">@item?.CreatedBy</a>
+            on @item?.CreatedDate
+        </p>
+    </div>
+    <!-- Divider-->
+    <hr class="my-4" />
+}

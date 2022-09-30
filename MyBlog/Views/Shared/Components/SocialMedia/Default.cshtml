@@ -7,10 +7,10 @@
         @foreach (var item in Model ?? new List<SocialMediaView>())
         {
             <li class="list-inline-item">
-                <a href="@item.SocialMediaUrl">
+                <a href="@item.SocialMediaUrl" target="@item?.Target">
                     <span class="fa-stack fa-lg">
                         <i class="fas fa-circle fa-stack-2x"></i>
-                        <i class="fab @item?.Icon fa-stack-1x fa-inverse"></i>
+                        <i class="@item?.Icon fa-stack-1x fa-inverse"></i>
                     </span>
                 </a>
             </li>

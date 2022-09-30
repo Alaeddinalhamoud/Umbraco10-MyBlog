@@ -58,11 +58,19 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Microsoft.AspNetCore.Html.HtmlString Icon => this.Value<global::Microsoft.AspNetCore.Html.HtmlString>(_publishedValueFallback, "icon");
 
 		///<summary>
-		/// Social Media Url: Social Media Url
+		/// Social Media URL
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("socialMediaUrl")]
-		public virtual string SocialMediaUrl => this.Value<string>(_publishedValueFallback, "socialMediaUrl");
+		[ImplementPropertyType("socialMediaURL")]
+		public virtual string SocialMediaUrl => this.Value<string>(_publishedValueFallback, "socialMediaURL");
+
+		///<summary>
+		/// Target: Page Settings
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("target")]
+		public virtual string Target => this.Value<string>(_publishedValueFallback, "target");
 	}
 }

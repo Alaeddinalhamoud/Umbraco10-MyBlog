@@ -24,9 +24,13 @@ namespace MyBlog.ViewComponents
 
                 if (content is null) return View(headerView);
 
+
                 headerView.Title = content?.Value<string>("title");
                 headerView.SubTitle = content?.Value<string>("subTitle");
-                headerView.ImageUrl = content?.Value<IPublishedContent>("pageBanner").Url();
+                headerView.ImageUrl = content?.Value<IPublishedContent>("pageBanner")?.Url();
+                headerView.IsBlog = content.IsDocumentType("blog");
+                headerView.CreatedBy = content?.CreatorName();
+                headerView.CreatedDate = content?.CreateDate.ToString("D");
             }
             catch (Exception ex)
             {

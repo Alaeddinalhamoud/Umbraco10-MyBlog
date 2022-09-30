@@ -4,17 +4,12 @@
   "libraries": [
     {
       "library": "font-awesome@5.15.4",
-      "destination": "wwwroot/lib/fontawsome",
-      "files": [
-        "css/all.css",
-        "js/all.min.js"
-      ]
+      "destination": "wwwroot/lib/fontawsome"
     },
     {
       "library": "bootstrap@5.2.1",
       "destination": "wwwroot/lib/bootstrap",
       "files": [
-        "css/bootstrap.min.css",
         "js/bootstrap.min.js"
       ]
     }

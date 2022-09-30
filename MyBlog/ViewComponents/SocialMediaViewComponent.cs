@@ -34,7 +34,8 @@ namespace MyBlog.ViewComponents
                     socialMediaItems?.Add(new SocialMediaView
                     {
                         Icon = socialMediaElement?.Icon?.ToString(),
-                        SocialMediaUrl = socialMediaElement?.SocialMediaUrl
+                        SocialMediaUrl = socialMediaElement?.SocialMediaUrl,
+                        Target = socialMediaElement?.Target
                     });
                 }
             }
