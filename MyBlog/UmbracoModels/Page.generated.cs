@@ -32,6 +32,10 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string Description { get; }
 
+		/// <summary>Display on Navbar</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		bool DisplayOnNavbar { get; }
+
 		/// <summary>keywords</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -134,6 +138,17 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetDescription(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "description");
+
+		///<summary>
+		/// Display on Navbar: To display the page on the Navbar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnNavbar")]
+		public virtual bool DisplayOnNavbar => GetDisplayOnNavbar(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Display on Navbar</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		public static bool GetDisplayOnNavbar(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "displayOnNavbar");
 
 		///<summary>
 		/// keywords: Meta Keyword
