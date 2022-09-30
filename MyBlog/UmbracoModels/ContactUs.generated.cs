@@ -65,7 +65,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool EnableEmailFeedback => this.Value<bool>(_publishedValueFallback, "enableEmailFeedback");
 
 		///<summary>
-		/// Author: Meta Author
+		/// Author: meta Author
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -88,7 +88,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool DisplayOnNavbar => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnNavbar(this, _publishedValueFallback);
 
 		///<summary>
-		/// keywords: Meta Keyword
+		/// Keywords: Meta Keyword
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -104,28 +104,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops OgImage => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetOgImage(this, _publishedValueFallback);
 
 		///<summary>
-		/// Open Graph Title: og:title  page title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("ogtitle")]
-		public virtual string Ogtitle => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetOgtitle(this, _publishedValueFallback);
-
-		///<summary>
 		/// Open Graph Type: og:type content type
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("ogtype")]
 		public virtual string Ogtype => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetOgtype(this, _publishedValueFallback);
-
-		///<summary>
-		/// Open Graph Url: og:url
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("ogUrl")]
-		public virtual string OgUrl => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetOgUrl(this, _publishedValueFallback);
 
 		///<summary>
 		/// Page Banner: Page Banner

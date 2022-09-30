@@ -31,6 +31,7 @@ namespace MyBlog.ViewComponents
                 foreach (var item in homePage?.SocialMediaPicker)
                 {
                     var socialMediaElement = item.Content as SocialMediaElement;
+
                     socialMediaItems?.Add(new SocialMediaView
                     {
                         Icon = socialMediaElement?.Icon?.ToString(),

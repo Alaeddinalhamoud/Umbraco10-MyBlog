@@ -3,7 +3,7 @@
     public class NavbarView
     {
         public string SiteName { get; set; }
-        public List<NavbarChild> NavbarChildren { get; set; }
+        public List<NavbarChild> NavbarChildren { get; set; } = new List<NavbarChild>();
     }
 
     public class NavbarChild

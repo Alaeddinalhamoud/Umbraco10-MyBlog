@@ -32,7 +32,14 @@ namespace MyBlog.ViewComponents
 
                 foreach (var item in homePage?.Children)
                 {
-
+                    if (item?.Value<bool>("displayOnNavbar") ?? false)
+                    {
+                        navbarItem.NavbarChildren.Add(new NavbarChild
+                        {
+                            Name = item?.Name,
+                            Url = item?.Url()
+                        });
+                    }                   
                 }
             }
             catch (Exception ex)

@@ -36,7 +36,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		bool DisplayOnNavbar { get; }
 
-		/// <summary>keywords</summary>
+		/// <summary>Keywords</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::System.Collections.Generic.IEnumerable<string> Keywords { get; }
@@ -46,20 +46,10 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::Umbraco.Cms.Core.Models.MediaWithCrops OgImage { get; }
 
-		/// <summary>Open Graph Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string Ogtitle { get; }
-
 		/// <summary>Open Graph Type</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string Ogtype { get; }
-
-		/// <summary>Open Graph Url</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string OgUrl { get; }
 
 		/// <summary>Page Banner</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
@@ -114,7 +104,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
-		/// Author: Meta Author
+		/// Author: meta Author
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -151,14 +141,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static bool GetDisplayOnNavbar(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "displayOnNavbar");
 
 		///<summary>
-		/// keywords: Meta Keyword
+		/// Keywords: Meta Keyword
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("keywords")]
 		public virtual global::System.Collections.Generic.IEnumerable<string> Keywords => GetKeywords(this, _publishedValueFallback);
 
-		/// <summary>Static getter for keywords</summary>
+		/// <summary>Static getter for Keywords</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::System.Collections.Generic.IEnumerable<string> GetKeywords(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<string>>(publishedValueFallback, "keywords");
@@ -177,19 +167,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetOgImage(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "ogImage");
 
 		///<summary>
-		/// Open Graph Title: og:title  page title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("ogtitle")]
-		public virtual string Ogtitle => GetOgtitle(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Open Graph Title</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetOgtitle(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "ogtitle");
-
-		///<summary>
 		/// Open Graph Type: og:type content type
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
@@ -201,19 +178,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetOgtype(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "ogtype");
-
-		///<summary>
-		/// Open Graph Url: og:url
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("ogUrl")]
-		public virtual string OgUrl => GetOgUrl(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Open Graph Url</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetOgUrl(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "ogUrl");
 
 		///<summary>
 		/// Page Banner: Page Banner

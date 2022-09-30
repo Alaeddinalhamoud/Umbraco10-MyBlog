@@ -1,0 +1,17 @@
+﻿@model MyBlog.Models.ViewComponentModels.MetaTagsView
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="@Model?.Description" />
+<meta name="author" content="@Model?.Author" />
+<meta name="keywords" content="@Model?.Keywords">
+<!--og-->
+<meta property="og:title" content="@Model?.Title" />
+<meta property="og:description" content="@Model?.Description" />
+<meta property="og:image" content="@Model?.OGImage" />
+<meta property="og:url" content="@Model.OGUrl" />
+<meta property="og:type" content="@Model?.OGType" />
+<!--Twitter-->
+<meta name="twitter:card" content="@Model?.TwitterCard" />
+<title>@Model?.Title</title>
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />

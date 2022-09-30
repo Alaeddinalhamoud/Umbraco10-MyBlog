@@ -15,7 +15,6 @@ namespace MyBlog.ViewComponents
             this.logger = logger;
             this.umbracoHelper = umbracoHelper;
         }
-
         public IViewComponentResult Invoke()
         {
             List<BlogsView> blogItems = new();
@@ -40,7 +39,6 @@ namespace MyBlog.ViewComponents
                         CreatedDate = item?.CreateDate.ToString("D")
                     });
                 }
-
             }
             catch (Exception ex)
             {
