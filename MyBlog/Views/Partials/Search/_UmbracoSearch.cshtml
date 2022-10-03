@@ -1,0 +1,41 @@
+﻿@using Examine
+@using Umbraco.Cms.Web.Common
+@inject IExamineManager ExamineManager;
+@model (string searchTerm, UmbracoHelper Umbraco)
+
+<p>Results for: <strong>@Model.searchTerm </strong></p>
+
+@if (ExamineManager.TryGetIndex("ExternalIndex", out var index))
+{
+    var results = index.Searcher.Search(Model.searchTerm);
+
+    if (results?.Any() ?? false)
+    {
+        <p>We found @results?.Count() results</p>
+
+        <div class="row">
+            <ul class="list-unstyled">
+                @foreach (var result in results)
+                {
+                    var content = Model.Umbraco.Content(result.Id);
+                    <li>
+                        <a href="@content?.Url()">@content?.Name</a>
+                        <hr />
+                    </li>
+                }
+            </ul>
+        </div>
+    }
+    else
+    {
+        <div>
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <div class="p-5 border border-dark bg-light">
+                        <h5>Your search returned 0 results.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

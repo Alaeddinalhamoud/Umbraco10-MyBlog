@@ -1,6 +1,4 @@
-﻿@using Examine
-@inject IExamineManager ExamineManager;
-@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Search>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 
@@ -12,19 +10,14 @@
 
     if (!string.IsNullOrWhiteSpace(qSearchTerm)) searchTerm = qSearchTerm;
     if (!string.IsNullOrWhiteSpace(querySearchTerm)) searchTerm = querySearchTerm;
-
 }
 
 <main class="mb-4">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-10 col-lg-8 col-xl-7">
-                <div>
-                    <form action="@Model.Url()" method="get">
-                        <input type="text" placeholder="Search" id="query" name="query" required />
-                        <button>Search</button>
-                    </form>
-                </div>
+              
+            <partial name="Search/_SearchBox" model="searchTerm"/>
 
                 @if (string.IsNullOrWhiteSpace(searchTerm))
                 {
@@ -32,42 +25,7 @@
                 }
                 else
                 {
-                    <p>Results for: <strong>@searchTerm </strong></p>
-
-                    @if (ExamineManager.TryGetIndex("ExternalIndex", out var index))
-                    {
-                        var results = index.Searcher.Search(searchTerm);
-
-                        if (results?.Any() ?? false)
-                        {
-                            <p>We found @results?.Count() results</p>
-
-                            <div class="row">
-                                <ul class="list-unstyled">
-                                    @foreach (var result in results)
-                                    {
-                                        var content = Umbraco.Content(result.Id);
-                                        <li>
-                                            <a href="@content?.Url()">@content?.Name</a>
-                                            <hr />
-                                        </li>
-                                    }
-                                </ul>
-                            </div>
-                        }
-                        else
-                        {
-                            <div>
-                                <div class="row">
-                                    <div class="col-12 mb-2">
-                                        <div class="p-5 border border-dark bg-light">
-                                            <h5>Your search returned 0 results.</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
+                   <partial name="Search/_UmbracoSearch" model="(searchTerm, Umbraco)"/>
                 }
             </div>
         </div>
