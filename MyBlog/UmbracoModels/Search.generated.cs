@@ -65,6 +65,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool EnableGoogleSearch => this.Value<bool>(_publishedValueFallback, "enableGoogleSearch");
 
 		///<summary>
+		/// Google  Custom Search API Key
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("googleCustomSearchAPIKey")]
+		public virtual string GoogleCustomSearchApikey => this.Value<string>(_publishedValueFallback, "googleCustomSearchAPIKey");
+
+		///<summary>
 		/// Author: meta Author
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]

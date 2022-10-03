@@ -15,9 +15,7 @@
 <main class="mb-4">
     <div class="container px-4 px-lg-5">
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-md-10 col-lg-8 col-xl-7">
-              
-            <partial name="Search/_SearchBox" model="searchTerm"/>
+            <div class="col-md-10 col-lg-8 col-xl-7">      
 
                 @if (string.IsNullOrWhiteSpace(searchTerm))
                 {
@@ -25,7 +23,11 @@
                 }
                 else
                 {
-                   <partial name="Search/_UmbracoSearch" model="(searchTerm, Umbraco)"/>
+                    if(Model?.EnableGoogleSearch ?? false){
+                        <partial name="Search/_GoogleSearch" model="Model?.GoogleCustomSearchApikey"/>
+                    }else{
+                        <partial name="Search/_UmbracoSearch" model="(searchTerm, Umbraco)" />
+                    }                   
                 }
             </div>
         </div>

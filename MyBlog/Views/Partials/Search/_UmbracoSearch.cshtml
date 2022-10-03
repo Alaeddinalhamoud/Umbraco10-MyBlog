@@ -3,6 +3,8 @@
 @inject IExamineManager ExamineManager;
 @model (string searchTerm, UmbracoHelper Umbraco)
 
+<partial name="Search/_SearchBox" model="Model.searchTerm" />
+
 <p>Results for: <strong>@Model.searchTerm </strong></p>
 
 @if (ExamineManager.TryGetIndex("ExternalIndex", out var index))
