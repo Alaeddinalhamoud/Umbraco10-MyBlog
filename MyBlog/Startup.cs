@@ -1,3 +1,5 @@
+using MyBlog.Composers;
+
 namespace MyBlog
 {
     public class Startup
@@ -33,6 +35,7 @@ namespace MyBlog
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
+                .AddCustomNotificationServices()
                 .Build();
         }
 
