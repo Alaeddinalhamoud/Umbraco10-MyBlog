@@ -6,7 +6,7 @@
             @if (!string.IsNullOrWhiteSpace(Model?.Logo))
             {
                 <img src="@Model?.Logo" width="30" height="30" class="d-inline-block align-top" alt="">
-            }           
+            }
             @Model?.SiteName
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,9 +21,13 @@
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="@item?.Url">@item?.Name</a></li>
                 }
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="form-inline my-2 my-lg-0" role="search" method="get" action="/search">
+                <div class="input-group">
+                    <input class="form-control" type="search" id="q" name="q" title="Search Here" placeholder="Search" aria-label="Search" aria-describedby="Search" required>
+                    <div class="imput-group-append">
+                        <button class="btn btn-outline-success " type="submit">Search</button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
