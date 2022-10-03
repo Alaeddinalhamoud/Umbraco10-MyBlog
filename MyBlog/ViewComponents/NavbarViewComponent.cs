@@ -29,6 +29,7 @@ namespace MyBlog.ViewComponents
                 if (homePage is null) return View(navbarItem);
 
                 navbarItem.SiteName = homePage?.SiteName;
+                navbarItem.Logo = homePage?.Logo?.Url();
 
                 foreach (var item in homePage?.Children)
                 {
@@ -39,7 +40,7 @@ namespace MyBlog.ViewComponents
                             Name = item?.Name,
                             Url = item?.Url()
                         });
-                    }                   
+                    }
                 }
             }
             catch (Exception ex)
