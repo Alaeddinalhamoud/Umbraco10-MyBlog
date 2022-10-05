@@ -4,10 +4,15 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 	</PropertyGroup>
+	<ItemGroup>
+		<Content Include="App_Plugins\TwoFactorProviders\twoFactorProviderGoogleAuthenticator.html" />
+	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="GoogleAuthenticator" Version="3.0.0" />
 		<PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.175" />
 		<PackageReference Include="Our.Iconic" Version="4.0.0" />
+		<PackageReference Include="SendGrid" Version="9.28.1" />
 		<PackageReference Include="Umbraco.Cms" Version="10.2.1" />
 	</ItemGroup>
 
@@ -18,7 +23,11 @@
 		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2.0.9" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Views\Partials\blocklist\Components\" />
+		<Folder Include="Views\Partials\blocklist\Components\" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="App_Plugins\TwoFactorProviders\package.manifest" />
+		<None Include="App_Plugins\TwoFactorProviders\twoFactorProviderGoogleAuthenticator.controller.js" />
 	</ItemGroup>
 
 

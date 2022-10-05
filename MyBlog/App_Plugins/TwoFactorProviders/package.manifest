@@ -1,0 +1,5 @@
+﻿{
+  "javascript": [
+    "~/App_Plugins/TwoFactorProviders/twoFactorProviderGoogleAuthenticator.controller.js"
+  ]
+}
