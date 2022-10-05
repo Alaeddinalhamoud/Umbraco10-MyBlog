@@ -8,6 +8,8 @@ namespace MyBlog.Composers
         public static IUmbracoBuilder AddCustomNotificationServices(this IUmbracoBuilder builder)
         {
             builder.AddNotificationHandler<ContentPublishingNotification, GoogleSearchAPIKeyNotification>();
+            builder.AddNotificationHandler<ContentPublishingNotification, ContactUsEmailSettingsNotification>();
+
             return builder;
         }
     }

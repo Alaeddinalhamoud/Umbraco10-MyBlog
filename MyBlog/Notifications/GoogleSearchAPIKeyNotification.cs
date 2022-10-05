@@ -15,7 +15,7 @@ namespace MyBlog.Notifications
             {
                 foreach (var node in notification.PublishedEntities)
                 {
-                    if (node.ContentType.Alias.Equals("search"))
+                    if (node?.ContentType?.Alias?.Equals("search") ?? false)
                     {
                         var googleSearchAPIKey = node.GetValue<string>("googleCustomSearchAPIKey");
                         var enableGoogleSearch = node.GetValue<bool>("enableGoogleSearch");

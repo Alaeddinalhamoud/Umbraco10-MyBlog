@@ -10,10 +10,5 @@ namespace MyBlog.Controllers.FeedbackController
         {
 
         }
-        public IActionResult Index()
-        {
-
-            return Ok();
-        }
     }
 }

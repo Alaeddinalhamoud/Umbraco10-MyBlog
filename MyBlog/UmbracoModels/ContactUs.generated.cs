@@ -58,11 +58,43 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BodyContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "bodyContent");
 
 		///<summary>
-		/// Enable Email Feedback
+		/// Enable Email Feedback: Enable Email Feedback
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[ImplementPropertyType("enableEmailFeedback")]
 		public virtual bool EnableEmailFeedback => this.Value<bool>(_publishedValueFallback, "enableEmailFeedback");
+
+		///<summary>
+		/// From
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("from")]
+		public virtual string From => this.Value<string>(_publishedValueFallback, "from");
+
+		///<summary>
+		/// Send Grid API Key: Send Grid API Key
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sendGridAPIKey")]
+		public virtual string SendGridApikey => this.Value<string>(_publishedValueFallback, "sendGridAPIKey");
+
+		///<summary>
+		/// Subject: Subject
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("subject")]
+		public virtual string Subject => this.Value<string>(_publishedValueFallback, "subject");
+
+		///<summary>
+		/// To: To
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("to")]
+		public virtual string To => this.Value<string>(_publishedValueFallback, "to");
 
 		///<summary>
 		/// Author: meta Author
