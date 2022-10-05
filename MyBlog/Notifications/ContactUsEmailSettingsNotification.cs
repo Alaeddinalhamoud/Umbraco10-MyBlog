@@ -1,6 +1,8 @@
 ﻿using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
+//https://our.umbraco.com/documentation/Reference/Notifications/
+
 namespace MyBlog.Notifications
 {
     public class ContactUsEmailSettingsNotification : INotificationHandler<ContentPublishingNotification>
