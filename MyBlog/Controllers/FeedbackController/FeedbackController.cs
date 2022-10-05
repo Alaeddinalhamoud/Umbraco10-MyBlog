@@ -27,8 +27,8 @@ namespace MyBlog.Controllers.FeedbackController
             this.umbracoHelper = umbracoHelper;
         }
 
-        [HttpPost("SubmitFeedback")]
-        public async Task<IActionResult> SubmitFeedback([FromForm] Feedback feedback)
+        [HttpPost("Submit")]
+        public async Task<IActionResult> Submit(Feedback feedback)
         {
             try
             {
@@ -50,12 +50,12 @@ namespace MyBlog.Controllers.FeedbackController
 
                 await emailService.SendEmail(emailRequest);
 
-                return Ok(true);
+                return Ok("True");
             }
             catch (Exception ex)
             {
                 logger.LogCritical(ex, $"Error while processing {nameof(FeedbackController)}");
-                return Ok(false);
+                return new BadRequestResult();
             }
         }
     }

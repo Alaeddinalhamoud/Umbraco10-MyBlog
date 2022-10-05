@@ -1,92 +1,29 @@
 ﻿<div class="my-5">
-    <form>
-        <div class="form-floating">
-            <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
-            <label for="name">Name</label>
-        </div>
-        <div class="form-floating">
-            <input class="form-control" id="email" type="email" placeholder="Enter your email..." required />
-            <label for="email">Email address</label>
-        </div>
-        <div class="form-floating">
-            <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." required />
-            <label for="phone">Phone Number</label>
-        </div>
-        <div class="form-floating">
-            <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" required></textarea>
-            <label for="message">Message</label>
-        </div>
-        <br />
-        <button class="btn btn-primary text-uppercase" id="contact-submit" type="submit">Send</button>
-    </form>
-</div>
-
-
-
-<div id="submitSuccessMessage" class="d-none">
-    <div class="text-center mb-3">
-        <div class="fw-bolder">Form submission successful!</div>
+    <div class="form-floating">
+        <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
+        <label for="name">Name</label>
+        <div class="text-danger d-none" id="nameValidation">A name is required.</div>
     </div>
-</div>
-
-
-<div id="submitErrorMessage" class="d-none">
-    <div class="text-center text-danger mb-3">
-        <div class="fw-bolder">Error sending message!</div>
+    <div class="form-floating">
+        <input class="form-control" id="email" type="email" placeholder="Enter your email..." required />
+        <label for="email">Email address</label>
+        <div class="text-danger d-none" id="emailValidation">A email is required.</div>
     </div>
+    <div class="form-floating">
+        <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." required />
+        <label for="phone">Phone Number</label>
+        <div class="text-danger d-none" id="phoneValidation">A phone number is required.</div>
+    </div>
+    <div class="form-floating">
+        <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" required></textarea>
+        <label for="message">Message</label>
+        <div class="text-danger d-none" id="messageValidation">A message is required.</div>
+    </div>
+    <br />
+    <button class="btn btn-primary text-uppercase" id="contact-submit" type="submit">Send</button>
 </div>
 
+<partial name="ContactUs/_FeedbackFormSuccess"/>
+<partial name="ContactUs/_FeedbackFormFailure" />
 
-<script type="text/javascript">
-    var submitbutton = document.getElementById('contact-submit');
-
-    submitbutton.onclick = function () {
-        if (!ValidateElememts){
-            return false
-        }
-
-        var formFeedbackData = {
-            name: document.getElementById('name').value,
-            email: document.getElementById('email').value,
-            phoneNumber: document.getElementById('phone').value,
-            message: document.getElementById('message').value
-
-            // googleRecaptchaToken: document.getElementById('GoogleRecaptchaToken').value
-        };
-
-
-        fetch("/Feedback/SubmitFeedback", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formFeedbackData)
-        }).then(res => {
-            console.log("Request complete! response:", res);
-        }).catch(err => {
-            // if any error occured, then catch it here
-            console.error(err);
-        });
-
-        //$.post("/Feedback/SubmitFeedback", formFeedbackData,
-        //    function (data, status) {
-
-        //        var submitSuccessMessage = document.getElementById('submitSuccessMessage');
-        //        var submitErrorMessage = document.getElementById('submitErrorMessage');
-
-        //        if (data == true) {
-        //            submitSuccessMessage.classList.remove("d-none");
-        //            submitErrorMessage.classList.add("d-none");
-        //        } else {
-        //            submitErrorMessage.classList.remove("d-none");
-        //            submitSuccessMessage.classList.add("d-none");
-        //        }
-
-        //    });
-    }
-
-    function ValidateElememts(){
-        if (document.getElementById('name').value.trim() == "") {
-            alert("Please enter Name!");
-            return false;
-        }
-    }
-</script>
+<script src="~/views/partials/contactus/_feedbackform.cshtml.js"></script>
