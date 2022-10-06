@@ -73,14 +73,6 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string From => this.Value<string>(_publishedValueFallback, "from");
 
 		///<summary>
-		/// Send Grid API Key: Send Grid API Key
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("sendGridAPIKey")]
-		public virtual string SendGridApikey => this.Value<string>(_publishedValueFallback, "sendGridAPIKey");
-
-		///<summary>
 		/// Subject: Subject
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]

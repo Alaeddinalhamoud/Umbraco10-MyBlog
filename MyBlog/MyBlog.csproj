@@ -23,6 +23,7 @@
 		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2.0.9" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
 	</ItemGroup>
 	<ItemGroup>
+		<Folder Include="App_Code\" />
 		<Folder Include="Views\Partials\blocklist\Components\" />
 	</ItemGroup>
 	<ItemGroup>
