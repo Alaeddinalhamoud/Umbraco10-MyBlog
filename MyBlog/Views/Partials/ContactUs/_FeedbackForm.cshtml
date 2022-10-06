@@ -1,4 +1,8 @@
-﻿<div class="my-5">
+﻿@using MyBlog.Models.AppSettingModels
+@using Microsoft.Extensions.Options
+@inject IOptions<GoogleRecaptchaSettings> googleRecaptchaSettingOptions
+
+<div class="my-5">
     <div class="form-floating">
         <input class="form-control" id="name" type="text" placeholder="Enter your name..." required />
         <label for="name">Name</label>
@@ -19,11 +23,23 @@
         <label for="message">Message</label>
         <div class="text-danger d-none" id="messageValidation">A message is required.</div>
     </div>
-    <br />
+    
+    <div id="html_element" class="mt-2 mb-2"></div>
+    <input required type="text" name="googleRecaptchaToken" id="googleRecaptchaToken" class="form-control" hidden/>
+    <div class="text-danger mb-2 d-none" id="googleRecaptchaTokenValidation">A Recaptcha is required.</div>
+   
     <button class="btn btn-primary text-uppercase" id="contact-submit" type="submit">Send</button>
 </div>
 
 <partial name="ContactUs/_FeedbackFormSuccess"/>
 <partial name="ContactUs/_FeedbackFormFailure" />
 
-<script src="~/views/partials/contactus/_feedbackform.cshtml.js"></script>
+
+<partial name="Bundles/_RecaptchaBundles" />
+<script type="text/javascript">
+    var sitekey = '@googleRecaptchaSettingOptions.Value.SiteKey'
+
+   
+</script>
+
+<script src="~/views/partials/contactus/_feedbackform.cshtml.js" defer></script>

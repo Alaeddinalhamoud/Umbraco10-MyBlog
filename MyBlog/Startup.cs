@@ -24,6 +24,7 @@ namespace MyBlog
                 .AddCustomUmbracoMFAServices()
             .Build();
 
+            services.AddCustomGoogleReCaptchaService(_config);
             services.AddCustomEmailServices(_config, _env);
             services.AddCustomUmbracoMFAService(_config);
         }

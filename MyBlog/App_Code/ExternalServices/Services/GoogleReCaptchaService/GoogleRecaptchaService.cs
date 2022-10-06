@@ -31,7 +31,7 @@ namespace MyBlog.ExternalServices.Services.GoogleReCaptchaService
             catch (Exception ex)
             {
                 logger.LogCritical(ex, $"Error while processing {nameof(GoogleRecaptchaService)}");
-                return new GoogleReCaptcha() { Success = false };
+                return new GoogleReCaptcha() { success = false };
             }
         }
     }
