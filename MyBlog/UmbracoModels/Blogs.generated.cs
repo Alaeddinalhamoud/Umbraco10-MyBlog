@@ -48,5 +48,12 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		}
 
 		// properties
+
+		///<summary>
+		/// Number of blogs: Number of blogs to be displayed in the home page
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("numberOfBlogs")]
+		public virtual int NumberOfBlogs => this.Value<int>(_publishedValueFallback, "numberOfBlogs");
 	}
 }

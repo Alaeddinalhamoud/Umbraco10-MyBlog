@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyBlog.App_Code.Pagination;
 using MyBlog.Models.ViewComponentModels;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Cms.Web.Common.PublishedModels;
@@ -15,9 +16,10 @@ namespace MyBlog.ViewComponents
             this.logger = logger;
             this.umbracoHelper = umbracoHelper;
         }
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int? page = 0)
         {
             List<BlogsView> blogItems = new();
+            int pageSize = 3;
             try
             {
                 var content = umbracoHelper?.ContentAtRoot()?
@@ -28,7 +30,9 @@ namespace MyBlog.ViewComponents
 
                 if (content == null) return View(blogItems);
 
-                foreach (Blog item in content.Children() ?? new List<Blog>())
+                pageSize = content.NumberOfBlogs.Equals(0) ? pageSize : content.NumberOfBlogs;
+
+                foreach (Blog item in content?.Children() ?? new List<Blog>())
                 {
                     blogItems?.Add(new BlogsView
                     {
@@ -44,7 +48,8 @@ namespace MyBlog.ViewComponents
             {
                 logger.LogError(ex, $"Error while processing {nameof(BlogsViewComponent)}");
             }
-            return View(blogItems);
+
+            return View(PaginatedList<BlogsView>.Create(blogItems.AsQueryable(), page ?? 1, pageSize));
         }
     }
 }

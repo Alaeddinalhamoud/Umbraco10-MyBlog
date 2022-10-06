@@ -1,5 +1,13 @@
-﻿@using MyBlog.Models.ViewComponentModels
-@model IEnumerable<BlogsView>
+﻿@using MyBlog.App_Code.Pagination
+@using MyBlog.Models.ViewComponentModels
+@model PaginatedList<BlogsView>
+
+@{
+    var query = Context?.Request?.Query["page"].ToString();
+    var pageNumber = string.IsNullOrWhiteSpace(query) ? 1 : Convert.ToInt32(query);
+    var prevDisabled = !Model.HasPreviousPage ? "d-none" : "";
+    var nextDisabled = !Model.HasNextPage ? "d-none" : "";
+}
 
 @foreach (var item in Model ?? new List<BlogsView>())
 {
@@ -18,3 +26,15 @@
     <!-- Divider-->
     <hr class="my-4" />
 }
+
+<!-- Pager-->
+<div class="d-flex justify-content-between mb-4">
+    <a class="btn btn-primary text-uppercase @prevDisabled" href="/home?page=@(pageNumber - 1)">
+        <span class="fas fa-arrow-alt-circle-left"></span>
+        Previous Posts
+    </a>
+    <a class="btn btn-primary text-uppercase @nextDisabled" href="/home?page=@(pageNumber + 1)">
+        Older Posts
+        <span class="fas fa-arrow-alt-circle-right"></span>
+    </a>
+</div>
