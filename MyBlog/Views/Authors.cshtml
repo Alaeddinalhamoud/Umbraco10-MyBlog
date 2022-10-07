@@ -1,0 +1,29 @@
+﻿@using MyBlog.Models.ViewComponentModels
+@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Authors>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
+
+<!-- Main Content-->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            @foreach (BlogAuthor blogAuthor in Model?.Children ?? new List<BlogAuthor>())
+            {
+                <div class="card m-2" style="width: 18rem;">
+                    <img class="card-img-top" src="@blogAuthor?.AuthorAvatar?.Url()" alt="Author">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="@blogAuthor?.Url()">
+                                @(UserService?.GetUserById(Convert.ToInt32(blogAuthor?.AuthorName))?.Name)
+                            </a>
+                        </h5>
+                    </div>
+                    <partial name="SocialMedia/_SocialMedia" model="blogAuthor" />
+                </div>
+            }
+        </div>
+    </div>
+</main>

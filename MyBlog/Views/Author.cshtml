@@ -1,0 +1,20 @@
+﻿@using Umbraco.Cms.Core.Services;
+@inject IUserService UserService;
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BlogAuthor>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <img class="img-thumbnail rounded" src="@Model?.AuthorAvatar?.Url()" />
+                <p> @(UserService?.GetUserById(Convert.ToInt32(Model?.AuthorName))?.Name)</p>
+                <p>
+                   <partial name="SocialMedia/_SocialMedia" model="Model"/>
+                </p>
+                <p>@Model?.AuthorDetails</p>
+            </div>
+        </div>
+    </div>
+</main>

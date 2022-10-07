@@ -1,0 +1,18 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BlogAuthor>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+<ul class="list-inline text-center">
+    @foreach (var item in Model?.SocialMedia)
+    {
+        var content = item.Content as SocialMediaElement;
+        <li class="list-inline-item">
+            <a href="@content.SocialMediaUrl" target="@content?.Target">
+                <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="@content?.Icon fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    }
+</ul>
