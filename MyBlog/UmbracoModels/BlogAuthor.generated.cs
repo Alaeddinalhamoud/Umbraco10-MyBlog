@@ -105,6 +105,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual bool DisplayOnNavbar => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnNavbar(this, _publishedValueFallback);
 
 		///<summary>
+		/// Display on Sitemap
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnSitemap")]
+		public virtual bool DisplayOnSitemap => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnSitemap(this, _publishedValueFallback);
+
+		///<summary>
 		/// Keywords: Meta Keyword
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]

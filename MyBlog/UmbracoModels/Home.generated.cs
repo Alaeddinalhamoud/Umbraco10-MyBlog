@@ -50,6 +50,14 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		// properties
 
 		///<summary>
+		/// Footer Links
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("footerLinks")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> FooterLinks => global::Umbraco.Cms.Web.Common.PublishedModels.Layout.GetFooterLinks(this, _publishedValueFallback);
+
+		///<summary>
 		/// Logo: Layout Logo 30X30
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
@@ -95,6 +103,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[ImplementPropertyType("displayOnNavbar")]
 		public virtual bool DisplayOnNavbar => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnNavbar(this, _publishedValueFallback);
+
+		///<summary>
+		/// Display on Sitemap
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnSitemap")]
+		public virtual bool DisplayOnSitemap => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnSitemap(this, _publishedValueFallback);
 
 		///<summary>
 		/// Keywords: Meta Keyword

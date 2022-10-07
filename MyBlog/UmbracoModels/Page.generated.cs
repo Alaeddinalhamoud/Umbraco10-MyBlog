@@ -36,6 +36,10 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		bool DisplayOnNavbar { get; }
 
+		/// <summary>Display on Sitemap</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		bool DisplayOnSitemap { get; }
+
 		/// <summary>Keywords</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -139,6 +143,17 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		/// <summary>Static getter for Display on Navbar</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		public static bool GetDisplayOnNavbar(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "displayOnNavbar");
+
+		///<summary>
+		/// Display on Sitemap
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnSitemap")]
+		public virtual bool DisplayOnSitemap => GetDisplayOnSitemap(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Display on Sitemap</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		public static bool GetDisplayOnSitemap(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "displayOnSitemap");
 
 		///<summary>
 		/// Keywords: Meta Keyword

@@ -1,0 +1,41 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.SiteMap>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using static MyBlog.Views.SiteMapRecursive
+
+
+<!-- Main Content -->
+<main class="mb-4">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                @Model?.BodyContent
+                <hr />
+                @{
+                    Recursive(Model.Root());
+                }
+            </div>
+        </div>
+    </div>
+</main>
+
+
+@{
+    void Recursive(IPublishedContent node)
+    {
+        if (GetPages(node)?.Any() ?? false)
+        {
+            <ul>
+                @foreach (var item in GetPages(node) ?? new List<IPublishedContent>())
+                {
+                    <li>
+                        <a href="@item?.Url()">@item?.Name</a>
+                        @{
+                            Recursive(item);
+                        }
+                    </li>
+                }
+            </ul>
+        }
+    }
+}

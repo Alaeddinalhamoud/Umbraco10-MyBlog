@@ -20,7 +20,7 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 {
 	/// <summary>Blogs</summary>
 	[PublishedModel("blogs")]
-	public partial class Blogs : PublishedContentModel
+	public partial class Blogs : PublishedContentModel, IPage
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -55,5 +55,91 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[ImplementPropertyType("numberOfBlogs")]
 		public virtual int NumberOfBlogs => this.Value<int>(_publishedValueFallback, "numberOfBlogs");
+
+		///<summary>
+		/// Author: meta Author
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("author")]
+		public virtual string Author => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetAuthor(this, _publishedValueFallback);
+
+		///<summary>
+		/// Description: meta Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("description")]
+		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDescription(this, _publishedValueFallback);
+
+		///<summary>
+		/// Display on Navbar: To display the page on the Navbar
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnNavbar")]
+		public virtual bool DisplayOnNavbar => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnNavbar(this, _publishedValueFallback);
+
+		///<summary>
+		/// Display on Sitemap
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnSitemap")]
+		public virtual bool DisplayOnSitemap => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnSitemap(this, _publishedValueFallback);
+
+		///<summary>
+		/// Keywords: Meta Keyword
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("keywords")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> Keywords => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetKeywords(this, _publishedValueFallback);
+
+		///<summary>
+		/// Open Graph Image: og:image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ogImage")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops OgImage => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetOgImage(this, _publishedValueFallback);
+
+		///<summary>
+		/// Open Graph Type: og:type content type
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("ogtype")]
+		public virtual string Ogtype => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetOgtype(this, _publishedValueFallback);
+
+		///<summary>
+		/// Page Banner: Page Banner
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageBanner")]
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops PageBanner => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetPageBanner(this, _publishedValueFallback);
+
+		///<summary>
+		/// Sub Title: Page Sub title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("subTitle")]
+		public virtual string SubTitle => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetSubTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Title: Page Title
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("title")]
+		public virtual string Title => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetTitle(this, _publishedValueFallback);
+
+		///<summary>
+		/// Twitter Card: card  for Twitter
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("twitterCard")]
+		public virtual string TwitterCard => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetTwitterCard(this, _publishedValueFallback);
 	}
 }
