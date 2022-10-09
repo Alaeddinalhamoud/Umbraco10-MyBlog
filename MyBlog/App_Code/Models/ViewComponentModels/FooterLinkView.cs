@@ -1,6 +1,6 @@
 ﻿namespace MyBlog.App_Code.Models.ViewComponentModels
 {
-    public class FooterLink
+    public class FooterLinkView
     {
         public string Name { get; set; }
         public string Url { get; set; }

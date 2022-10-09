@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Builder;
 using MyBlog.Composers;
 using MyBlog.ServiceCollections;
 
@@ -32,9 +31,7 @@ namespace MyBlog
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseUmbraco()
                 .WithMiddleware(u =>
@@ -48,8 +45,6 @@ namespace MyBlog
                     u.UseBackOfficeEndpoints();
                     u.UseWebsiteEndpoints();
                 });
-
-
         }
     }
 }

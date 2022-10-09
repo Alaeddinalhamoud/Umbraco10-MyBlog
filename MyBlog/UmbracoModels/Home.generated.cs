@@ -98,6 +98,13 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		public virtual string Description => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDescription(this, _publishedValueFallback);
 
 		///<summary>
+		/// Display on A to Z
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnAToZ")]
+		public virtual bool DisplayOnAtoZ => global::Umbraco.Cms.Web.Common.PublishedModels.Page.GetDisplayOnAtoZ(this, _publishedValueFallback);
+
+		///<summary>
 		/// Display on Navbar: To display the page on the Navbar
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]

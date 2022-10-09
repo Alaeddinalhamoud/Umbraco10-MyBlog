@@ -1,0 +1,10 @@
+﻿<div>
+    <ul class="list-inline">
+        @for (char letter = 'A'; letter < 'Z'; letter++)
+        {
+            <li class="list-inline-item">
+                <a href="/A-to-Z?letter=@letter">@letter</a>
+            </li>
+        }
+    </ul>
+</div>

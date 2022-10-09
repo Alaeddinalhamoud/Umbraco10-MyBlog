@@ -32,6 +32,10 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		string Description { get; }
 
+		/// <summary>Display on A to Z</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		bool DisplayOnAtoZ { get; }
+
 		/// <summary>Display on Navbar</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		bool DisplayOnNavbar { get; }
@@ -132,6 +136,17 @@ namespace Umbraco.Cms.Web.Common.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static string GetDescription(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "description");
+
+		///<summary>
+		/// Display on A to Z
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		[ImplementPropertyType("displayOnAToZ")]
+		public virtual bool DisplayOnAtoZ => GetDisplayOnAtoZ(this, _publishedValueFallback);
+
+		/// <summary>Static getter for Display on A to Z</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.2.1+25a20cf")]
+		public static bool GetDisplayOnAtoZ(IPage that, IPublishedValueFallback publishedValueFallback) => that.Value<bool>(publishedValueFallback, "displayOnAToZ");
 
 		///<summary>
 		/// Display on Navbar: To display the page on the Navbar

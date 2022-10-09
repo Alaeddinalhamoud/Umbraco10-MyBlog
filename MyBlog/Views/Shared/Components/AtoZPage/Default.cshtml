@@ -1,0 +1,20 @@
+﻿@using MyBlog.App_Code.Models.ViewComponentModels
+@model SortedDictionary<string, AtoZView>
+
+<h2 class="page-header">@Model?.FirstOrDefault().Value?.Letter</h2>
+
+@if (Model?.Any() ?? false)
+{
+    <ul>
+        @foreach (var entry in Model ?? new SortedDictionary<string, AtoZView>())
+        {
+            <li>
+                <a href="@entry.Value?.Url">@entry.Key</a>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <div class="alert alert-warning">No Pages</div>
+}

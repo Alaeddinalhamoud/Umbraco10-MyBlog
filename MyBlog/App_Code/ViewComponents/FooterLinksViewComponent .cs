@@ -18,7 +18,7 @@ namespace MyBlog.ViewComponents
 
         public IViewComponentResult Invoke()
         {
-            List<FooterLink> footerLinks = new();
+            List<FooterLinkView> footerLinks = new();
 
             try
             {
@@ -32,7 +32,7 @@ namespace MyBlog.ViewComponents
                 {
 
 
-                    footerLinks?.Add(new FooterLink
+                    footerLinks?.Add(new FooterLinkView
                     {
                         Name = item?.Name,
                         Url = item?.Url,
