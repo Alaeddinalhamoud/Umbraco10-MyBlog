@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MyBlog.App_Code.Pagination;
 using MyBlog.Models.ViewComponentModels;
+using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.Common;
 using Umbraco.Cms.Web.Common.PublishedModels;
 
@@ -40,6 +42,7 @@ namespace MyBlog.ViewComponents
                         SubTitle = item?.SubTitle,
                         BlogUrl = item?.Url(),
                         CreatedBy = item?.CreatorName(),
+                        AuthorUrl = item?.AuthorPageUrl?.Url(),
                         CreatedDate = item?.CreateDate.ToString("D")
                     });
                 }

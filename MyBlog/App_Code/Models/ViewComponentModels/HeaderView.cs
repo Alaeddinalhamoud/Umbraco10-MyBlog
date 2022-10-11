@@ -7,6 +7,7 @@
         public string ImageUrl { get; set; }
         public bool IsBlog { get; set; }
         public string CreatedBy { get; set; }
+        public string AuthorUrl { get; set; }
         public string CreatedDate { get; set; }
 
     }

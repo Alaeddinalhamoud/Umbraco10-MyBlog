@@ -30,6 +30,7 @@ namespace MyBlog.ViewComponents
                 headerView.ImageUrl = content?.Value<IPublishedContent>("pageBanner")?.Url();
                 headerView.IsBlog = content.IsDocumentType("blog");
                 headerView.CreatedBy = content?.CreatorName();
+                headerView.AuthorUrl = content?.Value<IPublishedContent>("authorPageUrl")?.Url();
                 headerView.CreatedDate = content?.CreateDate.ToString("D");
             }
             catch (Exception ex)
